@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-js@1.0.9/dist/goong-js.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline/src/polyline.js"></script>
+    <script src="https://unpkg.com/@goongmaps/goong-sdk/umd/goong-sdk.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl-directions/4.1.1/mapbox-gl-directions.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-gl-directions/4.1.1/mapbox-gl-directions.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@goongmaps/goong-geocoder@1.1.1/dist/goong-geocoder.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@goongmaps/goong-geocoder@1.1.1/dist/goong-geocoder.css" rel="stylesheet" type="text/css"/>
+
+
+    <!-- Promise polyfill script is required -->
+    <!-- to use Goong Geocoder in IE 11. -->
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@mapbox/polyline/src/polyline.js"></script>
+    <script src="https://unpkg.com/@goongmaps/goong-sdk/umd/goong-sdk.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+	<!--cdn firebae-->
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+	<!-- Add Firestore to your web app -->
+	<script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
+	<!--cdn firebae-->
+    <script src="./assets/js/utils.js"></script>
+    <script src="./assets/js/axiosClient.js"></script>
+	<script src="./assets/js/firebase.js"></script>
+</head>
+<body>
+    <div id="map"></div>
+
+
+    <!--  dislay info -->
+    <div  class="display-info  control" style="top: 75px;display: none;" >
+        <div class="bg-header" style="width:320px;height: 240px;">
+            
+        </div>
+        <div>
+            <div class="title-header">
+                Đại học Hutech
+            </div>
+            <div class="addressDetail">
+                <span class="address">
+                    Đại học Hutech, 475A Điện Biên Phủ, Phường 25, Bình Thạnh, Hồ Chí Minh
+                </span>
+            </div>
+			<input type="hidden" name="destination">
+			<input type="hidden" name="origin">
+            <div class="action-to">
+                <button  class="btn-direction" >
+                    <i class="fas fa-directions"></i>
+                    Chỉ đường
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- display info -->
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
