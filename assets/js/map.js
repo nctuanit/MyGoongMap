@@ -8,6 +8,12 @@ class MyMap {
 		this.CurrLocation = null;
 	}
 
+	showMyLocation(lng,lat) {
+		$(".myLocation").show();
+		$(".myLocation .lng").text(lng);
+		$(".myLocation .lat").text(lat);
+	}
+
 	init() {
 		getLocation((position) => {
 			this.map = new goongjs.Map({
@@ -20,6 +26,7 @@ class MyMap {
 				this.addMarker(position.coords.longitude, position.coords.latitude);
 				this.addControl();
 			});
+			this.showMyLocation(position.coords.longitude, position.coords.latitude);
 			this.CurrLocation = [position.coords.longitude, position.coords.latitude]
 		});
 	}
@@ -189,6 +196,7 @@ class MyMap {
 		setInterval(() => {
 			getLocation((position) => {
 				$("input[name='origin']").val(`${position.coords.latitude},${position.coords.longitude}`)
+				this.showMyLocation(position.coords.latitude,position.coords.longitude)
 				console.log(`${position.coords.latitude},${position.coords.longitude}`)
 				this.marker.setLngLat([position.coords.longitude, position.coords.latitude])
 				var origin = $("input[name='origin']").val();
@@ -200,7 +208,7 @@ class MyMap {
 					this.StartDirection(origin,destination);
 				}
 			});
-		}, 10000);
+		}, 5000);
 	}
 
 	removeSource(){
