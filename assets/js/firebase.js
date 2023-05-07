@@ -14,7 +14,7 @@ var db = firebase.firestore();
 function addDoc(geoJSON){
 
 	if(geoJSON){
-		geoJSON.coordinates = geoJSON.coordinates.map(e => `${e[0]}|${e[1]}`)
+		geoJSON.coordinates = geoJSON.coordinates.map(e => `${e[1]}|${e[0]}`)
 	}
 	db.collection("data").add(geoJSON)
 }
