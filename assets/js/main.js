@@ -1,7 +1,7 @@
 
 let isStart = false;
 window.addEventListener('message', event => {
-	console.log(event.data);
+	console.log(JSON.stringify(event.data));
 	
 	localStorage.setItem('location', JSON.stringify(event.data));
 	if(!isStart){
