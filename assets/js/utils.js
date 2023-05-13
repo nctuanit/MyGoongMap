@@ -1,7 +1,6 @@
 function getLocation(callback){
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(callback);
-    } else {
-        alert("Geolocation is not supported by this browser.");
-    }
+   let location = LocalStorage.getItem('location');
+	   if(location){
+		   callback(JSON.parse(location));
+	   }
 }
