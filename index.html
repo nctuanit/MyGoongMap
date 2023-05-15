@@ -52,14 +52,18 @@
         </div>
         <div>
             <div class="title-header">
+				<!-- hiện thị tên địa điểm đến -->
                 {Name of place}
             </div>
             <div class="addressDetail">
                 <span class="address">
+					<!-- Hiên thị địa chỉ địa điểm đến -->
                     {Address of place}
                 </span>
             </div>
+			<!-- ô input lưu trữ địa điểm đến -->
 			<input type="hidden" name="destination">
+			<!-- ô input lưu trữ địa điểm hiện tại -->
 			<input type="hidden" name="origin">
             <div class="action-to">
                 <button  class="btn-direction" >
@@ -72,11 +76,14 @@
 	<!--  box vị trí hiện tại -->
 	<div class="myLocation">
 		<i class="fas fa-map-marker-alt"></i>
+		<!-- Phẩn tử hiển thị tung độ -->
 		<span class="lng"></span>
+		<!-- Phẩn tử hiển thị vĩ độ -->
 		<span class="lat"></span>
 
 	</div>
 
+	<!-- Include file js map và main -->
     <script src="./assets/js/map.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>

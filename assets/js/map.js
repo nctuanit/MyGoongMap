@@ -15,6 +15,10 @@ class MyMap {
 	}
 
 	init() {
+		/**
+		 * hàm lấy vị trí hiện tại
+		 * @param {function} callback
+		 */
 		getLocation((position) => {
 			this.map = new goongjs.Map({
 				container: "map", // id của thành phần chứa map
@@ -39,6 +43,9 @@ class MyMap {
 			]; // lưu trữ vị trí hiện tại
 		});
 	}
+	/**
+	 * thêm các control vào map
+	 */
 	addControl() {
 		this.map.addControl(new goongjs.ScaleControl(), "bottom-right"); // thêm control scale
 		// Add geolocate control to the map.
@@ -117,6 +124,12 @@ class MyMap {
 
 		// add control find location
 	}
+
+	/**
+	 * thêm icon marker vào vị trí hiện tại
+	 * @param {number} lng 
+	 * @param {number} lat 
+	 */
 	addMarker(lng, lat) {
 		this.marker = new goongjs.Marker().setLngLat([lng, lat]); // tạo marker
 		this.marker.addTo(this.map); // thêm marker vào map
@@ -171,6 +184,9 @@ class MyMap {
 			});
 	}
 
+	/**
+	 * thêm sự kiện cho nút tìm đường
+	 */
 	btnDirection() {
 		$(".btn-direction").click(() => { // sự kiện nhấn nút tìm đường
 			this.removeSource(); // xóa source
@@ -220,6 +236,9 @@ class MyMap {
 		}, 5000); // thời gian cập nhật vị trí hiện tại (ms) mỗi 5 giây cập nhật 1 lần
 	}
 
+	/**
+	 * thực hiện hành động xóa line chỉ đường
+	 */
 	removeSource() {
 		if (this.map.getLayer("route")) { // nếu có layer route
 			this.map.removeLayer("route"); // xóa layer route
